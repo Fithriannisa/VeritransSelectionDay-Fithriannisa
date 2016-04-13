@@ -19,6 +19,7 @@ public class Game {
 		String rndStr = "";
 		String ans = "";
 		int idx;
+		boolean win = true;
 		ArrayList<Character> strChar = new ArrayList<Character>();
 		ArrayList<String> listName = new ArrayList<String>();
 		
@@ -32,7 +33,7 @@ public class Game {
 			FileReader fr = new FileReader(filename);
 			BufferedReader br = new BufferedReader(fr);
 			
-			// Membaca file nama.txt serta 
+			// Membaca file file input serta 
 			while((str=br.readLine()) != null) {
 				listName.add(str);
 			}
@@ -55,27 +56,29 @@ public class Game {
 				strChar.add(str.charAt(i));
 				i++;
 			}
-						
-			// Me-random kata
-			while(strChar.size() != 0) {
-				idx = r.nextInt(strChar.size());
-							
-				rndStr = rndStr + strChar.get(idx);
-				strChar.remove(idx);
-							
-			}
+			
+			rndStr = randStr(strChar);
 						
 			System.out.println("Tebak kata: " + rndStr);
 			System.out.print("Jawab: ");
 			ans = in.nextLine();
-						
-			while(!ans.equalsIgnoreCase(str)) {
-				System.out.println("SALAH! Silahkan coba lagi");
-				System.out.print("Jawab: ");
-				ans = in.nextLine();
+			String giveup = "";
+			while(!ans.equalsIgnoreCase(str)) {				
+				System.out.println("SALAH! Apakah menyerah untuk kata ini?(yes/no)");
+				giveup = in.nextLine();
+				
+				if(giveup.equalsIgnoreCase("yes") || giveup.equalsIgnoreCase("y")) {
+					break;
+				} else if(giveup.equalsIgnoreCase("no") || giveup.equalsIgnoreCase("n")) {
+					System.out.println("Silahkan coba lagi!");
+					System.out.print("Jawab: ");
+					ans = in.nextLine();
+				}
 			}
-			System.out.println("BENAR");
-						
+			
+			if(ans.equalsIgnoreCase(str)) {
+				System.out.println("BENAR :)");
+			}		
 						
 			// Mengkosongkan variable rndStr untuk dipakai pada loop selanjutnya
 			rndStr = "";
@@ -83,13 +86,15 @@ public class Game {
 			// --------------------------
 		}
 		
-		System.out.println("THANK YOU!");
+		System.out.println("Thanks for playing");
+		
+		System.out.println("- GAME END -");
 
 	}
 	
 	/*
 	 * Method ini berfungsi untuk mendapatkan sebuah string dari sebuah ArrayList secara random
-	 * Serta menghapus kata yang diambil dari ArrayList tersebut
+	 * Serta menghapus string yang telah diambil dari ArrayList tersebut
 	 * */
 	public static String randWord(ArrayList<String> listName) {
 		Random r = new Random();
@@ -99,5 +104,32 @@ public class Game {
 		return str;
 		
 	}
+	/*
+	 * Method ini berfungsi untuk mendapatkan sebuah character dari sebuah ArrayList secara random
+	 * Serta menghapus character yang telah diambil dari ArrayList tersebut 
+	 * */
+	
+	public static char randChar(ArrayList<Character> chr) {
+		Random r = new Random();
+		int rand = r.nextInt(chr.size());
+		char c = chr.get(rand);
+		chr.remove(rand);
+		return c;
+	}
 
+	/*
+	 * Method ini berfungsi untuk membuat sebuah string menjadi random string
+	 * Dimana random string merupakan suatu string yang memiliki character sama persis seperti string awal,
+	 * hanya saja letak characternya berbeda
+	 * 
+	 * */
+	public static String randStr(ArrayList<Character> chr) {
+		String rndStr = "";
+		
+		// Me-random kata
+		while(chr.size() != 0) {							
+			rndStr = rndStr + randChar(chr);
+		}
+		return rndStr;
+	}
 }
