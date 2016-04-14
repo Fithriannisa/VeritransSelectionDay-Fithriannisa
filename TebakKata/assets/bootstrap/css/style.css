@@ -1,0 +1,26 @@
+header {
+	background-color: #fffecb;
+}
+
+.icon-container {
+	margin: 11px 15px;
+	float: left;
+}
+
+#greeting{
+	font-family: 'Raleway', sans-serif;
+	font-size: 140%;
+}
+
+#name {
+	font-family: 'Oswald', sans-serif;
+	font-size: 400%;
+	word-spacing: 15px;
+}
+
+.content {
+	background-color: #f6c6b2;
+	height: 300px;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
