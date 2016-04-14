@@ -3,4 +3,5 @@ Berisi tugas yang saya (Fithriannisa Augustianti) kerjakan saat berlangsungnya a
 
 
 Game.java -> program game nya  ---
-nama.txt -> contoh input kata-kata
+nama.txt -> contoh input kata-kata ---
+TebakKata.zip -> berisi .html dari design UI Game Tebak Kata
