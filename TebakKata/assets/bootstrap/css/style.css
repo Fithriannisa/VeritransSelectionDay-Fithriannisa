@@ -3,16 +3,16 @@ header {
 }
 
 .icon-container {
-	margin: 11px 15px;
+	margin: 11px 100px;
 	float: left;
 }
 
-#greeting{
+.greeting{
 	font-family: 'Raleway', sans-serif;
 	font-size: 140%;
 }
 
-#name {
+.name {
 	font-family: 'Oswald', sans-serif;
 	font-size: 400%;
 	word-spacing: 15px;
@@ -20,7 +20,7 @@ header {
 
 .content {
 	background-color: #f6c6b2;
-	height: 300px;
+	height: 350px;
 	margin-top: 30px;
 	padding-top: 20px;
 	padding-bottom: 30px;
@@ -30,6 +30,25 @@ header {
 	font-family: 'Open Sans', sans-serif;
 }
 
+.content p, footer{
+	font-family: 'Oswald', sans-serif;
+	font-size: 100%;
+	word-spacing: 5px;
+}
+
 .content div {
 	margin: 30px 0;
+}
+
+.form-control {
+	margin: 10px 0;
+}
+
+button {
+	margin-top: 35px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+footer {
+	margin:50px;
 }

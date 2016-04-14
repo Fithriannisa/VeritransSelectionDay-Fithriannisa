@@ -2572,7 +2572,7 @@ output {
 }
 .form-control {
   display: block;
-  width: 100%;
+  width: 50%;
   height: 45px;
   padding: 10px 15px;
   font-size: 15px;
@@ -3153,9 +3153,9 @@ fieldset[disabled] .btn-default.focus {
   border-color: #000000;
 }
 .btn-primary:hover {
-  color: #ffffff;
-  background-color: #e9633b;
-  border-color: #e9633b;
+  color: #000000;
+  background-color: #fffecb;
+  border-color: #fffecb;
   /*border-color: #161f29;*/
 }
 .btn-primary:active,
